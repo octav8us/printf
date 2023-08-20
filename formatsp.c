@@ -30,7 +30,7 @@ void formatsp(const char *format, va_list args, int *n_printed)
 	}
 	else if (format[i] == '%')/*%%*/
 	{
-		_putchar('%', 1);
+		write(1, &format[i], 1);
 		(*n_printed)++;
 		format++;
 	}
