@@ -9,6 +9,7 @@
 
 /*--> TOOLS <--*/
 int _putchar(char data, size_t size);
+void formatsp(const char *format, va_list args, int *n_printed);
 
 /*--> FUNCTION PROTOTYPES <--*/
 int _printf(const char *format, ...);

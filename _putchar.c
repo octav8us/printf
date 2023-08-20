@@ -5,6 +5,7 @@
 /**
  * _putchar - writes a char to stdout
  * @data: the char to be written
+ * @size: number of bytes
  *
  * Return: 1 (success)
  * or 0 (error) and specefy errno
