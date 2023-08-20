@@ -1,9 +1,8 @@
 #include "main.h"
-
 /**
- * formatsp - called in _printf when format is specified
+ * formatsp - called in _printf when a format is specified
  * @format: ptr to format string
- * @args: va_list containing the variable arguments
+ * @args: the variable arguments of type va_list
  * @n_printed: ptr to n_printed counter
  */
 void formatsp(const char *format, va_list args, int *n_printed)
@@ -11,7 +10,7 @@ void formatsp(const char *format, va_list args, int *n_printed)
 	char *str, ch;
 	int i = 0;
 
-	i++; /* Move to next char after '%' */
+	i++; /* Move to the char rigt after '%' */
 	if (format[i] == 's')/*String literal*/
 	{
 		str = va_arg(args, char *);
@@ -34,7 +33,7 @@ void formatsp(const char *format, va_list args, int *n_printed)
 		(*n_printed)++;
 		format++;
 	}
-	else
+	else/*Unaccepted specifier for this task*/
 	{
 		_putchar('%', 1);
 		_putchar(format[i], 1);
