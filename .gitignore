@@ -1,0 +1,4 @@
+#Ignore all [shell, .out, main.c] files
+*~
+*.out
+*main.c
