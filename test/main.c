@@ -1,5 +1,4 @@
 #include <limits.h>
-#include <stdio.h>
 #include "main.h"
 
 /**
@@ -9,9 +8,11 @@
  */
 int main(void)
 {
-	printf("Compiled!\n");
-	_printf("%s", "Ama\n");
-	_printf("Kofi is a boy.\n");
+	_printf("Compiled!\n");
+	_printf("%s\n", "Ama");
+	_printf("%c\n", 'M');
 	_printf("This is a very long string djfkljfkjf kjfkjfkljflkdj \n");
+	_printf("%%\n");
+	_printf("%c %s %%\n", 'A', "combination");
 	return (0);
 }
