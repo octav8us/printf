@@ -10,6 +10,7 @@ int _printf(const char *format, ...)
 	char *str;
 	int i = 0, n_printed = 0;
 	va_list args;
+	unsigned char temp;
 
 	if (!format) /*NULL value passed*/
 		return (-1);
@@ -21,7 +22,9 @@ int _printf(const char *format, ...)
 			if (format[i] == '%') /*Format specifier*/
 			{
 				i++; /*Move to next char*/
-				if (format[i] == 's')
+				switch (format[i])
+				{
+				case 's':
 				{
 					str = va_arg(args, char *);
 					while (*str)
@@ -30,7 +33,19 @@ int _printf(const char *format, ...)
 						str++;
 						n_printed++;
 					}
+					break;
 				}
+				case 'c':
+				{
+					temp = va_arg(args, int);
+					_putchar(temp, 1);
+					n_printed++;
+					break;
+				}
+
+
+				}
+
 			}
 			else /*No format specifier*/
 			{
