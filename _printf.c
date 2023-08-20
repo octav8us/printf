@@ -42,6 +42,13 @@ int _printf(const char *format, ...)
 					n_printed++;
 					break;
 				}
+				case '%':
+				{
+					_putchar('%',1);
+					n_printed++;
+					break;
+
+				}
 
 
 				}
