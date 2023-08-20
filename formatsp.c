@@ -32,6 +32,14 @@ void formatsp(const char *format, va_list args, int *n_printed)
 	{
 		_putchar('%', 1);
 		(*n_printed)++;
+		format++;
+	}
+	else
+	{
+		_putchar('%', 1);
+		_putchar(format[i], 1);
+		(*n_printed) += 2;
+		format++;
 	}
 	format += i;
 }
