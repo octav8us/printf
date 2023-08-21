@@ -45,7 +45,11 @@ void handle_binary(va_list args, int *n_printed)
 	}
 
 	for (i -= 1; i >= 0; i--)
+	{
 		_putchar('0' + binaryNum[i], 1);
+		(*n_printed)++;
+
+	}
 
 
 }
