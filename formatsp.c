@@ -21,6 +21,9 @@ void formatsp(const char *format, va_list args, int *n_printed)
 	case 'c':
 		handle_character(args, n_printed);
 		break;
+	case 'd':
+		handle_decimal(args, n_printed);
+		break;
 	case '%':
 		handle_percent(n_printed);
 		break;
