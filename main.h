@@ -18,6 +18,7 @@ void handle_character(va_list args, int *n_printed);
 void handle_percent(int *n_printed);
 void handle_unknown(const char *format, int *n_printed);
 void handle_decimal(va_list args, int *n_printedn_printed);
+void handle_int(va_list args, int *n_printedn_printed);
 
 
 

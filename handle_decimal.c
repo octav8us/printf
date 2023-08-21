@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * handle_decimal - Handle the 's' format specifier
+ * handle_decimal - Handle the 'd' format specifier
  *
  * @args: The args to be printed
  * @n_printed: Pointer to the counter for printed characters
