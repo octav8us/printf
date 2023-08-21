@@ -12,7 +12,6 @@ void formatsp(const char *format, va_list args, int *n_printed)
 {
 	int i = 0;
 
-<<<<<<< HEAD
 	i++;
 	switch (format[i])
 	{
