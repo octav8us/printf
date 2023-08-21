@@ -1,45 +1,34 @@
 #include "main.h"
 
+
 /**
  * formatsp - called in _printf when format is specified
- * @format: ptr to format string
+ *
+ * @format: Pointer to the format string
  * @args: va_list containing the variable arguments
- * @n_printed: ptr to n_printed counter
+ * @n_printed: Pointer to the counter for printed characters
  */
+
+
 void formatsp(const char *format, va_list args, int *n_printed)
 {
-	char *str, ch;
 	int i = 0;
 
-	i++; /* Move to next char after '%' */
-	if (format[i] == 's')/*String literal*/
+	i++;
+	switch (format[i])
 	{
-		str = va_arg(args, char *);
-		while (*str)
-		{
-			_putchar(*str, 1);
-			str++; /* Next char within the string */
-			(*n_printed)++;
-		}
-	}
-	else if (format[i] == 'c')/*Char*/
-	{
-		ch = va_arg(args, int);
-		_putchar(ch, 1);
-		(*n_printed)++;
-	}
-	else if (format[i] == '%')/*%%*/
-	{
-		write(1, &format[i], 1);
-		(*n_printed)++;
-		format++;
-	}
-	else
-	{
-		_putchar('%', 1);
-		_putchar(format[i], 1);
-		(*n_printed) += 2;
-		format++;
+	case 's':
+		handle_string(va_arg(args, char *), n_printed);
+		break;
+	case 'c':
+		handle_character(args, n_printed);
+		break;
+	case '%':
+		handle_percent(n_printed);
+		break;
+	default:
+		handle_unknown(format + i, n_printed);
+		break;
 	}
 	format += i;
 }
