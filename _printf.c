@@ -1,8 +1,9 @@
 #include "main.h"
 /**
- * _printf - writes to stdout according to data format
- * @format: string to be written. may/may not have format specifiers
- * Return: num of char printed, excluding '\0'
+ * _printf - writes to stdout according to data format.
+ * @format: string to be written. may/may not have format specifiers.
+ * Return: num of char printed, excluding '\0' (success).
+ * OR -1 (error).
  */
 int _printf(const char *format, ...)
 {
@@ -16,7 +17,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (format[i])/* Iterate through arguments */
 	{
-		if (format[i] == '%') /* Format specifier */
+		if (format[i] == '%') /*An accepted format specified */
 		{
 			formatsp(format + i, args, &n_printed);
 			format++;/*Skip the actual fmt specifier*/

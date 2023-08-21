@@ -1,12 +1,10 @@
 #include "main.h"
 
-
 /**
- * formatsp - called in _printf when format is specified
- *
- * @format: Pointer to the format string
- * @args: va_list containing the variable arguments
- * @n_printed: Pointer to the counter for printed characters
+ * formatsp - called in _printf when a format is specified
+ * @format: ptr to format string
+ * @args: the variable arguments of type va_list
+ * @n_printed: ptr to n_printed counter
  */
 
 
@@ -14,6 +12,7 @@ void formatsp(const char *format, va_list args, int *n_printed)
 {
 	int i = 0;
 
+<<<<<<< HEAD
 	i++;
 	switch (format[i])
 	{
@@ -29,6 +28,7 @@ void formatsp(const char *format, va_list args, int *n_printed)
 	default:
 		handle_unknown(format + i, n_printed);
 		break;
+
 	}
 	format += i;
 }
