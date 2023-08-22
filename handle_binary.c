@@ -7,10 +7,16 @@
  * @n_printed: Pointer to the counter for printed characters
  */
 
+
+
+
 void handle_binary(va_list args, int *n_printed)
 {
+
 	int n = va_arg(args, int), i,  temp;
 	int binaryNum[32];
+
+
 
 	if (n < 0)
 	{
@@ -44,4 +50,6 @@ void handle_binary(va_list args, int *n_printed)
 		(*n_printed)++;
 
 	}
+
+
 }
