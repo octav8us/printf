@@ -21,6 +21,7 @@ void handle_unknown(const char *format, int *n_printed);
 void handle_decimal(va_list args, int *n_printedn_printed);
 void handle_int(va_list args, int *n_printedn_printed);
 void handle_binary(va_list args, int *n_printedn_printed);
+void nullable_string(char *str, int *n_printed);
 
 
 
