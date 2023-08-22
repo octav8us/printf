@@ -18,7 +18,6 @@ void formatsp(const char *format, va_list args, int *n_printed)
 	case 's':
 		handle_string(va_arg(args, char *), n_printed);
 		break;
-
 	case 'S':
 		handle_string(va_arg(args, char *), n_printed);
 		break;

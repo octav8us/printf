@@ -24,8 +24,15 @@ void handle_string(const char *str, int *n_printed)
 
 	while (*str)
 	{
-		_putchar(*str, 1);
-		(*n_printed)++;
+		if (*str < 32 || *str >= 127)
+		{
+			handle_non_printable(*str, n_printed);
+		}
+		else
+		{
+			_putchar(*str, 1);
+			(*n_printed)++;
+		}
 		str++;
 	}
 }
