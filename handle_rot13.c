@@ -1,7 +1,8 @@
 #include "main.h"
 /**
- * *rot13 - encodes string using rot13 algorithm
+ * handle_rot13 - encodes string using rot13 algorithm
  * @s: the string to be encoded
+ * @n_print: the printing count
  * Return: encouded words
  */
 
@@ -26,6 +27,6 @@ void handle_rot13(char *s, int *n_print)
 		}
 	}
 
-	handle_string(encoded , n_print);
+	handle_string(encoded, n_print);
 
 }
