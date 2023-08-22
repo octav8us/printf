@@ -3,12 +3,12 @@
 
 
 /**
- * handle_string - Handle the 's' format specifier
+ * handle_non_printable_string - Handle the 'S' format specifier
  *
  * @str: The string to be printed
  * @n_printed: Pointer to the counter for printed characters
  */
-void handle_string(const char *str, int *n_printed)
+void handle_non_printable_string(const char *str, int *n_printed)
 {
 
 	const char *null_replacer = "(null)";
@@ -24,9 +24,15 @@ void handle_string(const char *str, int *n_printed)
 
 	while (*str)
 	{
-
+		if (*str < 32 || *str >= 127)
+		{
+			handle_non_printable(*str, n_printed);
+		}
+		else
+		{
 			_putchar(*str, 1);
 			(*n_printed)++;
-			str++;
+		}
+		str++;
 	}
 }

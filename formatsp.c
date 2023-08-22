@@ -19,7 +19,7 @@ void formatsp(const char *format, va_list args, int *n_printed)
 		handle_string(va_arg(args, char *), n_printed);
 		break;
 	case 'S':
-		handle_string(va_arg(args, char *), n_printed);
+		handle_non_printable_string(va_arg(args, char *), n_printed);
 		break;
 	case 'c':
 		handle_character(va_arg(args, int), n_printed);
