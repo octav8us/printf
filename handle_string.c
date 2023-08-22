@@ -10,6 +10,7 @@
  */
 void handle_string(const char *str, int *n_printed)
 {
+
 	const char *null_replacer = "(null)";
 
 	if (str == NULL)
@@ -20,17 +21,11 @@ void handle_string(const char *str, int *n_printed)
 
 
 	}
+
 	while (*str)
 	{
-		if (*str < 32 || *str >= 127)
-		{
-			handle_non_printable(*str, n_printed);
-		}
-		else
-		{
-			_putchar(*str, 1);
-			(*n_printed)++;
-		}
+		_putchar(*str, 1);
+		(*n_printed)++;
 		str++;
 	}
 }
