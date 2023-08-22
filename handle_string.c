@@ -24,9 +24,9 @@ void handle_string(const char *str, int *n_printed)
 
 	while (*str)
 	{
-
-			_putchar(*str, 1);
-			(*n_printed)++;
-			str++;
+		_putchar(*str, 1);
+		(*n_printed)++;
+		str++;
 	}
+
 }
