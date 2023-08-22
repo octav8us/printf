@@ -21,9 +21,11 @@ void formatsp(const char *format, va_list args, int *n_printed)
 	case 'S':
 		handle_string(va_arg(args, char *), n_printed);
 		break;
-
 	case 'c':
-		handle_character(args, n_printed);
+		handle_character(va_arg(args, int), n_printed);
+		break;
+	case 'R':
+		handle_rot13(va_arg(args, char *), n_printed);
 		break;
 	case 'd':
 		handle_decimal(args, n_printed);
@@ -37,10 +39,11 @@ void formatsp(const char *format, va_list args, int *n_printed)
 	case '%':
 		handle_percent(n_printed);
 		break;
+	case '\0':
+		break;
 	default:
 		handle_unknown(format + i, n_printed);
 		break;
 
 	}
-	format += i;
 }

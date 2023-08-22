@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * handle_decimal - Handle the 'd' format specifier
@@ -7,14 +8,9 @@
  * @n_printed: Pointer to the counter for printed characters
  */
 
-
-
-
 void handle_decimal(va_list args, int *n_printed)
 {
-
 	int n = va_arg(args, int), digit, i, num_digits = 0, temp;
-
 
 	if (n < 0)
 	{
@@ -28,7 +24,6 @@ void handle_decimal(va_list args, int *n_printed)
 	{
 		_putchar('0', 1);
 		(*n_printed)++;
-
 		return;
 	}
 
@@ -49,7 +44,4 @@ void handle_decimal(va_list args, int *n_printed)
 		(*n_printed)++;
 		num_digits--;
 	}
-
-
-
 }

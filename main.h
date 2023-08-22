@@ -14,8 +14,9 @@ void formatsp(const char *format, va_list args, int *n_printed);
 /*--> FUNCTION PROTOTYPES <--*/
 int _printf(const char *format, ...);
 void handle_string(const char *str, int *n_printed);
+void handle_rot13(char *str, int *n_printed);
 void handle_non_printable(const char str, int *n_printed);
-void handle_character(va_list args, int *n_printed);
+void handle_character(const int ch, int *n_printed);
 void handle_percent(int *n_printed);
 void handle_unknown(const char *format, int *n_printed);
 void handle_decimal(va_list args, int *n_printedn_printed);
