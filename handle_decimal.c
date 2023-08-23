@@ -12,18 +12,12 @@ void handle_decimal(va_list args, int *n_printed)
 {
 	int n = va_arg(args, int), digit, i, num_digits = 0, temp;
 
-	if (n == INT_MIN)
-	{
-		_putchar('-', 1);
-		(*n_printed)++;
-		n = -(n + 1); /*For absolute value of INT_MIN*/
-	}
 	if (n < 0)
 	{
 		_putchar('-', 1);
 		(*n_printed)++;
 
-		n = -n;/*Print -ve sign, then change n to +ve*/
+		n = -n;
 	}
 
 	if (n == 0)
@@ -38,7 +32,7 @@ void handle_decimal(va_list args, int *n_printed)
 	while (temp > 0)
 	{
 		temp /= 10;
-		num_digits++;/*get num of digits in the decimal*/
+		num_digits++;
 	}
 
 	while (num_digits > 0)
